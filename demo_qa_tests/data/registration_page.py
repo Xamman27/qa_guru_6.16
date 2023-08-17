@@ -8,7 +8,6 @@ class RegistrationPage():
         self.input_email = browser.element('#userEmail')
         self.input_phone_number = browser.element('#userNumber')
 
-
     def open(self):
         browser.open('automation-practice-form')
 
@@ -47,7 +46,7 @@ class RegistrationPage():
         browser.element('#currentAddress').should(be.blank).type('SPB')
         browser.element('#react-select-3-input').should(be.blank).type('ncr').press_enter()
         browser.element('#react-select-4-input').should(be.blank).type('Delhi').press_enter().press_enter()
-        # browser.wait_until(10)
+
 
 
 
