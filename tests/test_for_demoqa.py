@@ -15,6 +15,7 @@ reg_page = RegistrationPage()
 def test_simple():
     reg_page.open()
     reg_page.register(student)
+    #reg_page.chech_registr(student)
 
 # def test_registration_page():
 #     reg_page = RegistrationPage()
