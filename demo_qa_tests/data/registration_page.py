@@ -12,8 +12,9 @@ class RegistrationPage():
         self.radio_button_hobies = browser.all
         self.upload_picture = browser.element('#uploadPicture')
         self.input_current_address = browser.element('#currentAddress')
-        self.input_state = browser.element('#react-select-3-input')
-        self.input_city = browser.element('#react-select-4-input')
+        self.input_state = browser.element('#state')
+        self.input_city = browser.element('#city')
+        self.submit_button = browser.element('#submit')
 
         self.result_student_name = browser.element('//tbody/tr[1]/td[2]')
         self.result_mail = browser.element('//tbody/tr[2]/td[2]')
@@ -23,7 +24,7 @@ class RegistrationPage():
         self.result_subject = browser.element('//tbody/tr[6]/td[2]')
         self.result_hobbies = browser.element('//tbody/tr[7]/td[2]')
         self.result_image = browser.element('//tbody/tr[8]/td[2]')
-        self.result_city =  browser.element('//tbody/tr[9]/td[2]')
+        self.result_city = browser.element('//tbody/tr[9]/td[2]')
         self.result_address = browser.element('//tbody/tr[10]/td[2]')
 
 
@@ -47,15 +48,20 @@ class RegistrationPage():
         self.upload_picture.set_value(image_path)
         self.input_current_address.should(be.blank).type(student.current_address)
         self.input_city.perform(command.js.scroll_into_view)
-        browser.element('#state').click()
-        browser.all('[id^=react-select][id*=option]').element_by(
-            have.exact_text(student.state)
-        ).click()
-        browser.element('#city').perform(command.js.scroll_into_view)
-        browser.element('#city').click()
-        browser.all('[id^=react-select][id*=option]').element_by(
-            have.exact_text(student.city)
-        ).click()
+        self.input_state.type(student.state).press_enter()
+        self.input_city.type(student.city).press_enter()
+        self.submit_button.should(be.visible).click()
+        # browser.element('#state').click()
+        # browser.all('[id^=react-select][id*=option]').element_by(
+        #     have.exact_text(student.state)
+        # ).click()
+        #
+
+        # browser.element('#city').perform(command.js.scroll_into_view)
+        # browser.element('#city').click()
+        # browser.all('[id^=react-select][id*=option]').element_by(
+        #     have.exact_text(student.city)
+        # ).click()
 
         # self.input_state.should(be.visible).type(student.state).press_enter()
         # self.input_city.should(be.clickable).type(student.city).press_enter()
