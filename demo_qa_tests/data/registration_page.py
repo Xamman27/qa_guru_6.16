@@ -10,7 +10,7 @@ class RegistrationPage():
         self.input_phone_number = browser.element('#userNumber')
 
     def open(self):
-        browser.open('automation-practice-form')
+        browser.open('https://demoqa.com/automation-practice-form')
 
     def fill_first_name(self, value: str):
         self.input_first_name.type(value)
