@@ -1,4 +1,5 @@
-from selene import browser, have, be
+from selene.support.shared import browser
+from selene import have
 
 
 class RegistrationDonePage():

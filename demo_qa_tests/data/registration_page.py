@@ -1,4 +1,4 @@
-from selene import browser, be, have
+from selene.support.shared import browser
 
 
 class RegistrationPage():
