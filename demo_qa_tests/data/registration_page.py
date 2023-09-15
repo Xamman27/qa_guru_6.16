@@ -1,4 +1,5 @@
-from selene import browser, be, have, command
+from selene.support.shared import browser
+from selene import be, command
 from demo_qa_tests.data.users import Users
 from demo_qa_tests.data.path import image_path
 
